@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html><!--- Opening HTML --->
+    <head>
+        <title> Dhaivat Tripathi - COMP-6062 Final Project </title>
+        <!--- BootStrap CDN --->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css?">
+        <!--- Custom CSS file --->
+        <link rel="stylesheet" href="css/styles.css">
+    </head>
+    <body>
+        <div id="app" class="container">
+            <!--Header Section-->
+            <header class="my-4 text-center">
+                <h1>Dhaivat Tripathi - 1162646</h1>
+                <p class="lead">COMP-6062 Final Project</p>
+            </header>
+
+            <!--Main section-->
+            <main class="container-fluid px-5">
+                <div class="row">  <!--Bootstrap Grid-->
+                    <!-- Random User Profile Module -->
+                    <div class="col-md-4 mb-4">
+                        <section class="section-block bg-light shadow-sm p-3 mb-6 rounded">
+                        <h2 class="my-2">User Profile Information</h2>
+                        <div v-if="profileData">  <!--Vue condition-->
+                            <!--Profile picture from API-->
+                            <img :src="profileData.profile_picture" alt="Profile Photo" class="img-thumbnail mb-4" width="270">
+                            <!--Full Name and Age-->
+                            <p><strong>Full Name:</strong> {{ profileData.first_name }} {{ profileData.last_name }}</p>
+                            <p><strong>Age:</strong> {{ profileData.age }}</p>
+                            <!--Button to generate new profiles -->
+                            <button class="btn btn-outline-primary" @click="fetchProfile">New Profile</button>
+                        </div>
+                        </section>
+                    </div>
+
+                    <!-- Weather Module -->
+                    <div class="col-md-8 mb-4">
+                        <section class="section-block bg-light shadow-sm p-1 mb-2 rounded">
+                            <h2 class="my-2">Weather Details</h2>
+                        
+                            <p v-if="weatherDetails.temperature"><strong>Location:</strong> {{ city }}, {{ province }}, {{ country }}</p>
+                            <p v-if="weatherDetails.temperature"><strong>Temperature:</strong> {{ weatherDetails.temperature }}</p>
+                            <p v-if="weatherDetails.wind"><strong>Wind:</strong> {{ weatherDetails.wind }}</p>
+                            <p v-if="weatherDetails.description"><strong>Description:</strong> {{ weatherDetails.description }}</p>
+                            <!--Weather input fields with v-model binding-->
+                            <input v-model="city" placeholder="City" class="form-control mb-1">
+                            <input v-model="province" placeholder="Province" class="form-control mb-1">
+                            <input v-model="country" placeholder="Country" class="form-control mb-1">
+                            <!--Button to fetch weather details-->
+                            <button class="btn btn-outline-primary" @click="fetchWeather">Get Weather</button>
+                            </section>
+                    </div>
+                </div> <!--End of row-->
+
+                <!-- Dictionary Module -->
+                <section class="section-block bg-green shadow-sm p-4 rounded">
+                <h2>Word Definition</h2>
+                <!--Word input-->
+                <input v-model="word" placeholder="Enter word" class="form-control mb-2">
+                <button class="btn btn-outline-primary" @click="fetchDefinition">Define</button>
+                
+                <!--Display dictionary results-->
+                <div v-if="dictionary.word">
+                    <h3>{{ dictionary.word }}</h3>
+                    <p><strong>Phonetic:</strong> {{ dictionary.phonetic }}</p>
+                    <p>{{ dictionary.definition }}</p>
+                </div>
+                </section>
+             
+                <!--Footer section-->
+                <footer class="text-center my-3 py-3 bg-light border-top">
+                    <p>&copy; 2025 Dhaivat Tripathi</p>
+                </footer>
+            </main> 
+        </div>
+
+        <!--- Vue.js CDN --->
+        <script src="https://unpkg.com/vue@3.4.31/dist/vue.global.js"></script>
+        <!--- Custom JavaScript file --->
+        <script src="scripts/app.js"></script>
+    </body>
+</html><!--- Closing HTML --->

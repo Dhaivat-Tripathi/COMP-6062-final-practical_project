@@ -1,0 +1,109 @@
+/* Body Styling */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: rgba(190, 197, 122, 0.321);
+    color: #2c3e50;
+    margin: 3pt;
+    padding: 5px;
+}
+
+.container {
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+/* Header Styling */
+header h1 {
+    font-size: 40px;
+    font-weight: 700;
+    color: #2a4d69;
+}
+
+header p.lead {
+    font-size: 20px;
+    color: black;
+}
+
+/* Word definition section styling*/
+.bg-green {
+    background-color: rgb(226, 183, 217);
+    color: darkblue;
+}
+
+/* Image Styling */
+.img-thumbnail {
+    width: 160px;
+    height: 160px;
+    object-fit: cover;
+    border: 2px solid brown;
+}
+
+/* Form Elements Styling */
+input.form-control {
+    font-size: 15px;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid darkorange;
+    background-color: white;
+}
+
+/* Buttons Styling*/
+button {
+    background-color: blue;
+    color: white;
+    padding: 4px;
+    border-radius: 6px;
+    font-weight: 500;
+}
+
+h2 {
+    font-size: 26px;
+    font-style: oblique;
+    color: darkgreen;
+    
+}
+
+p {
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+/* Footer styling */
+footer {
+    color: black;
+    font-size: 8px;
+    border-top: 1px solid black;
+}
+
+/* Media Query*/
+@media (max-width: 768px) {
+    .section-block {
+        padding: 16px;
+    }
+
+    .img-thumbnail {
+        width: 120px;
+        height: 120px;
+    }
+
+    header h1 {
+        font-size: 26px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    input.form-control {
+        font-size: 15px;
+    }
+
+    button {
+        width: 100%;
+        margin-top: 8px;
+    }
+
+    footer {
+        text-align: center;
+    }
+}
