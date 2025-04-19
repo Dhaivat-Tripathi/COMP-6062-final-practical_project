@@ -3,7 +3,7 @@ const app = Vue.createApp({
     /// Define the data for the app
     data() {
         return {
-            profileData: {},   // Profile info
+            profileData: {},  // Profile info
 
             // Default location fields for weather 
             city: "London",
